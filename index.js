@@ -1,3 +1,4 @@
+require('dotenv').config();
 const 
     info = require('./handlers/info'),
     game = require('./handlers/game'),
@@ -17,7 +18,6 @@ client.on('message', message => {
   let callingUser = message.author;
   if (message.author.bot) return;
   let commands = parseCommands(message.content);
-  console.log(commands)
   switch(commands.action) {
     case 'help':
     case 'info':
